@@ -31,13 +31,25 @@ body {
 }
 
 .card {
+    position: relative;          /* ОБЯЗАТЕЛЬНО */
     background: #fff;
     padding: 20px;
+    padding-top: 90px;           /* место под гифку */
     width: 360px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
+    overflow: visible;
+}
+
+.card-gif {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    pointer-events: none;
 }
 
 .card input {
