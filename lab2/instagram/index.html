@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0E1014;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        display: flex;
+        gap: 50px;
+    }
+    .mockup {
+        text-align: center;
+    }
+    .mockup img {
+        max-width: 1000px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        margin-top: 100px;
+    }
+    .mockup p {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #abc3da;
+    }
+    .mockup span {
+        color: #ed4956;
+    }
+    .login-box {
+        background: #0E1014;
+        padding: 100px;
+        border: 1px solid #dadee6;
+        border-radius: 5px;
+        text-align: flex-start;
+        width: 250px;
+        height: 400px
+    }
+    .login-box img {
+        width: 175px;
+        margin-bottom: 20px;
+    }
+    .login-box input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        background: #0E1014;
+    }
+    .login-box button {
+        width: 100%;
+        padding: 10px;
+        background: #0095f6;
+        border: none;
+        color: #eceaea;
+        font-weight: bold;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .login-box .or {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .login-box .or div {
+        flex: 1;
+        height: 1px;
+        background: #dbdbdb;
+    }
+    .login-box .or span {
+        margin: 0 10px;
+        color: #8e8e8e;
+        font-weight: bold;
+    }
+    .login-box .social-login {
+        margin-top: 10px;
+        color: #abc3da;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .login-box .forgot {
+        font-size: 12px;
+        color: #abc3da;
+        margin-top: 10px;
+        display: block;
+        text-decoration: none;
+    }
+    .signup {
+        margin-top: 10px;
+        padding: 20px;
+        background: #0E1014;
+        border: 1px solid #e9e5e5;
+        border-radius: 5px;
+        text-align: center;
+        color: #abc3da;
+    }
+    .signup a {
+        color: #0095f6;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="mockup">
+        <img src="inst.jpg" alt="Phone mockup">
+        <p>Look, which moments was shared by your <span>close friends</span>.</p>
+    </div>
+    <div>
+        <div class="login-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logo">
+            <input type="text" placeholder="username, email or phone number">
+            <input type="password" placeholder="Password">
+            <button>Join</button>
+            <a href="#" class="forgot">Forgot password?</a>
+            <div class="or">
+                <div></div>
+                <span>OR</span>
+                <div></div>
+            </div>
+            <div class="social-login">Join with Facebook</div>
+        </div>
+        <div class="signup">
+            No accountr? <a href="#">Сreate new</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
