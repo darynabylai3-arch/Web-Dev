@@ -1,0 +1,73 @@
+<div class="detail-overlay" (click)="closeDetail()">
+  <div class="detail-container" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeDetail()">×</button>
+    
+    <div class="detail-content" *ngIf="product">
+      <div class="product-gallery">
+        <div class="main-image">
+          <img [src]="selectedImage" [alt]="product.name">
+        </div>
+        
+        <div class="thumbnail-images" *ngIf="product.images && product.images.length > 1">
+          <div 
+            class="thumbnail" 
+            *ngFor="let image of product.images"
+            [class.active]="image === selectedImage"
+            (click)="selectImage(image)"
+          >
+            <img [src]="image" [alt]="product.name">
+          </div>
+        </div>
+        
+        <div class="image-note" *ngIf="product.images && product.images.length > 0">
+          Чтобы увеличить, нажмите на картинку
+        </div>
+      </div>
+      
+      <div class="product-details">
+        <div class="kaspi-badge" *ngIf="product.code">Каспі Магазин</div>
+        
+        <h1 class="product-title">{{ product.name }} <span *ngIf="product.brand">{{ product.brand }}</span></h1>
+        <div class="product-category">{{ product.category }}</div>
+        
+        <div class="product-rating">
+          <span class="stars">
+            <span *ngFor="let star of getStars(product.rating)" class="star">★</span>
+            <span *ngFor="let star of getStars(5 - product.rating)" class="star empty">☆</span>
+          </span>
+          <span class="reviews">({{ product.reviews }} отзывов)</span>
+        </div>
+        
+        <div class="product-code" *ngIf="product.code">
+          Код товара: {{ product.code }}
+        </div>
+        
+        <div class="product-description" *ngIf="product.description">
+          <h3>Описание</h3>
+          <p>{{ product.description }}</p>
+        </div>
+        
+        <div class="product-price-section">
+          <div class="price-label">Цена</div>
+          <div class="price-value">{{ product.price }} ₸</div>
+          <div class="installment" *ngIf="product.monthlyPrice">
+            В рассрочку: {{ product.monthlyPrice }} ₸ x3 мес
+          </div>
+        </div>
+        
+        <button class="kaspi-btn" *ngIf="product.code">
+          Открыть в приложении Kaspi.kz
+        </button>
+        
+        <div class="detail-tabs">
+          <button class="tab active">Продавцы</button>
+          <button class="tab">Отзывы ({{ product.reviews }})</button>
+          <button class="tab">Характеристики</button>
+          <button class="tab">Описание</button>
+        </div>
+        
+        <div class="installment-note">В рассрочку</div>
+      </div>
+    </div>
+  </div>
+</div>
