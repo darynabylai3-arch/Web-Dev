@@ -1,2 +1,0 @@
-echo "lab4/project/product-catalog/.git/" >> .gitignore
-echo "lab4/project/product-catalog/node_modules/" >> .gitignore

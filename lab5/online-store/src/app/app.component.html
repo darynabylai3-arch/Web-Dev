@@ -1,0 +1,44 @@
+<div class="app-container">
+  <header>
+    <h1>🛒 Online Store</h1>
+    <button class="home-btn" (click)="clearSelection()">🏠 Главная</button>
+  </header>
+
+  <div class="main-content">
+    <!-- Сайдбар с категориями -->
+    <aside class="sidebar">
+      <h2>Категории</h2>
+      <div class="categories-list">
+        @for (category of categories; track category.id) {
+          <button 
+            class="category-btn"
+            [class.active]="selectedCategoryId === category.id"
+            (click)="selectCategory(category.id)">
+            <span class="category-icon">{{ category.icon }}</span>
+            <span class="category-name">{{ category.name }}</span>
+          </button>
+        }
+      </div>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="content">
+      @if (selectedCategoryId) {
+        <product-list [categoryId]="selectedCategoryId" />
+      } @else {
+        <div class="welcome-message">
+          <h2>Добро пожаловать в Online Store!</h2>
+          <p>Выберите категорию из списка слева, чтобы увидеть товары</p>
+          <div class="categories-preview">
+            @for (category of categories; track category.id) {
+              <div class="preview-card" (click)="selectCategory(category.id)">
+                <span class="preview-icon">{{ category.icon }}</span>
+                <span class="preview-name">{{ category.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </main>
+  </div>
+</div>
