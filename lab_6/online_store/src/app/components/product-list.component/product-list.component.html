@@ -1,0 +1,15 @@
+
+
+<div class="grid">
+  <app-product-card
+    *ngFor="let product of selectedProducts"
+    [product]="product"
+    (deleteEmitter)="deleteProduct($event)"
+    >
+  </app-product-card>
+  <p *ngIf="selectedProducts.length===0">
+    No product is found
+  </p>
+</div>
+
+

@@ -1,0 +1,31 @@
+<div class="card">
+  <button (click)="deleteEmitterTrigger()" id="delete">X</button>
+  <img class="main-img" [src]="selectedImage"  alt="{{product.name}}">
+
+  <div class="thumbs">
+    <img *ngFor="let img of product.images"
+         [src]="img"
+         (click)="selectImage(img)">
+  </div>
+
+  <h2>{{product.name}}</h2>  
+  <button (click)="like()">{{product.isLike ? '❤️' : '🤍'}}</button>
+  <p>{{product.likes}}</p>
+
+  <p class="desc">{{product.description}}</p>
+
+  <div class="price">{{product.price | number}} ₸</div>
+
+  <div class="rating">
+    <span *ngFor="let s of stars">⭐</span>
+    <span class="num">{{product.rating}}</span>
+  </div>
+
+  <div class="buttons">
+    <a [href]="product.link" target="_blank">View</a>
+    <button (click)="shareWhatsApp()">WhatsApp</button>
+    <button (click)="shareTelegram()">Telegram</button>
+    
+  </div>
+  
+</div>

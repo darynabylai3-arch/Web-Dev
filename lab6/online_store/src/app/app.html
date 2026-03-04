@@ -1,0 +1,11 @@
+
+<div id="header">
+    <h1 class="title">Online Store</h1>
+    <ul id="categories">
+        <li *ngFor="let category of categories" (click)="SelectCategory(category)" class="categories_li">
+            <strong >{{category.name}}</strong>
+        </li>
+    </ul>
+
+</div>
+<app-product-list  [selectedProducts]="getSelectedProducts()" (deleteEmitterTriggerList)="delete($event)"></app-product-list>
